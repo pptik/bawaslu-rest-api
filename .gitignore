@@ -65,4 +65,6 @@ setup/rmq.json
 setup/configs.json
 .idea/
 config.json
+.vscode
 # End of https://www.gitignore.io/api/node
+/fcm_service_account.json
