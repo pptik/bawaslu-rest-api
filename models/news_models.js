@@ -121,6 +121,7 @@ exports.getNewsDetail=function(NewsID) {
                         downvote : 1,
                         favorite : 1,
                         comment:1,
+                        tags:1,
                         created_at: 1,
                         updated_at:1,
                         files:1,
