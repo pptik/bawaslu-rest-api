@@ -126,7 +126,13 @@ router.post('/news/create/activities', async (ctx) => {
                         }
                     }
                 }
-                query.Title="Aktivitas Relawan";
+                //dashboard logging
+                if(IsChallenge){
+                    query.Title="Challenge";
+                    query.Challenge=true;
+                }else{
+                    query.Title="Aktivitas Relawan";
+                }
                 query.Desc=query.Content;
                 query.ContentCode=activities.create_news.content_code;
                 query.ContentText=activities.create_news.content;
@@ -201,7 +207,13 @@ router.post('/news/create/activities2', async (ctx) => {
                         }
                     }
                 }
-                query.Title="Aktivitas Relawan";
+                //dashboard logging
+                if(IsChallenge){
+                    query.Title="Challenge";
+                    query.Challenge=true;
+                }else{
+                    query.Title="Aktivitas Relawan";
+                }
                 query.Desc=query.Content;
                 query.ContentCode=activities.create_news.content_code;
                 query.ContentText=activities.create_news.content;
@@ -276,7 +288,13 @@ router.post('/news/create/text', async (ctx) => {
                     }
                 }
 
-                query.Title="Aktivitas Relawan";
+                //dashboard logging
+                if(IsChallenge){
+                    query.Title="Challenge";
+                    query.Challenge=true;
+                }else{
+                    query.Title="Aktivitas Relawan";
+                }
                 query.Desc=query.Content;
                 query.ContentCode=activities.create_news.content_code;
                 query.ContentText=activities.create_news.content;

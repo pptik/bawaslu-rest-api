@@ -59,6 +59,7 @@ exports.createNews=function(query) {
             let dashboardActivity = {
                 title:query.Title,
                 desc:query.Desc,
+                challenge:query.Challenge,
                 post_by:{
                     user_id:new ObjectId(query.UserID),
                     username:query.Username
@@ -92,6 +93,7 @@ exports.createMediaNews=function(query) {
             let dashboardActivity = {
                 title:query.Title,
                 desc:query.Desc,
+                challenge:query.Challenge,
                 post_by:{
                     user_id:new ObjectId(query.UserID),
                     username:query.Username
@@ -250,6 +252,7 @@ exports.getListWithUserPicture=function(Skip) {
                         'user_detail.display_picture':1,
                         title:1,
                         desc:1,
+                        challenge:1,
                         post_by:1,
                         content_code:1,
                         content_text:1,
@@ -321,6 +324,7 @@ exports.filterListByContent=function(Skip,ContentCode) {
                         'user_detail.display_picture':1,
                         title:1,
                         desc:1,
+                        challenge:1,
                         post_by:1,
                         content_code:1,
                         content_text:1,
@@ -365,6 +369,7 @@ exports.searchListByTitle=function(Skip,SearchString) {
                         'user_detail.display_picture':1,
                         title:1,
                         desc:1,
+                        challenge:1,
                         post_by:1,
                         content_code:1,
                         content_text:1,
@@ -409,6 +414,7 @@ exports.filterListSortBy=function(Skip,MySort) {
                         'user_detail.display_picture':1,
                         title:1,
                         desc:1,
+                        challenge:1,
                         post_by:1,
                         content_code:1,
                         content_text:1,
