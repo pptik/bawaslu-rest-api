@@ -161,6 +161,10 @@ router.post('/news/create/activities', async (ctx) => {
                 }
                 dashboardLogModel.createMediaNews(query);
                 userLogModel.create(query);
+                if(query.Challenge_id != null){
+                    query.NewsID = result.newsDetail._id
+                    challengeModel.answerChallenge(query);
+                }
                 broadcastNotification("Aktivitas Terbaru dari "+user.username,query.Content,query.ContentText,query.ContentID)
             }
             ctx.body = result;
@@ -242,6 +246,10 @@ router.post('/news/create/activities2', async (ctx) => {
                 }
                 dashboardLogModel.createMediaNews(query);
                 userLogModel.create(query);
+                if(query.Challenge_id != null){
+                    query.NewsID = result.newsDetail._id
+                    challengeModel.answerChallenge(query);
+                }
                 broadcastNotification("Aktivitas Terbaru dari "+user.username,query.Content,query.ContentText,query.ContentID)
             }
             ctx.body = result;
@@ -323,6 +331,10 @@ router.post('/news/create/text', async (ctx) => {
                 }
                 dashboardLogModel.createNews(query);
                 userLogModel.create(query);
+                if(query.Challenge_id != null){
+                    query.NewsID = result.newsDetail._id
+                    challengeModel.answerChallenge(query);
+                }
                 broadcastNotification("Aktivitas Terbaru dari "+user.username,query.Content,query.ContentText,query.ContentID)
             }
             ctx.body = result;
