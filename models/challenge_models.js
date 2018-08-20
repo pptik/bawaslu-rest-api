@@ -4,6 +4,7 @@ exports.create=function(query){
     return new Promise(async(resolve, reject)=>{
         try {
             let challenge = {
+                title: query.Title,
                 content: query.Content,
                 expire: query.ChallengeDetail.expire,
                 poin: query.ChallengeDetail.poin,
@@ -43,7 +44,7 @@ exports.answerChallenge=function(query){
             let editChallenge = {
                 participants: {
                     user_id: query.UserID,
-                    news_id: query.NewsID
+                    news_id: query.NewsID   
                 }
             }
             await challengeColl.findOneAndUpdate(
